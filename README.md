@@ -14,7 +14,7 @@ Storage: **D1** holds the menu and orders (tables are created automatically on f
 1. Cloudflare dashboard → Workers & Pages → Create → Import from GitHub → this repo.
 2. Build command `npx opennextjs-cloudflare build`, deploy command `npx wrangler deploy`.
 3. Settings → Variables and Secrets: add secret `ADMIN_PASSWORD` (and optionally `ADMIN_SECRET`). Admin and kitchen stay disabled without it.
-4. The first deploy creates the D1 database `groov-hq-db` automatically. Create the R2 bucket `groov-hq-photos` once first (dashboard → R2 → Create bucket, or `npx wrangler r2 bucket create groov-hq-photos`). The Worker name in `wrangler.jsonc` must match your Cloudflare project name.
+4. The first deploy creates the D1 database `groov-hq-db` automatically. The R2 photo bucket is created automatically too (R2 must be enabled on the account). The Worker name in `wrangler.jsonc` must match your Cloudflare project name.
 Or from a terminal: `npm run deploy`.
 
 ## Brand assets
