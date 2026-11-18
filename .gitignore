@@ -2,3 +2,7 @@ node_modules
 .next
 .env*.local
 data/orders.json
+.open-next
+.dev.vars
+.wrangler
+tsconfig.tsbuildinfo

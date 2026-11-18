@@ -1,1 +1,4 @@
-export default { images: { remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }], formats: ['image/avif', 'image/webp'] } };
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
+initOpenNextCloudflareForDev();
+
+export default { images: { loader: 'custom', loaderFile: './lib/imageLoader.ts' } };

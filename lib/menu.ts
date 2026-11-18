@@ -1,14 +1,12 @@
 import 'server-only';
-import { promises as fs } from 'fs';
-import path from 'path';
+import seed from '@/data/menu.json';
 import type { Menu } from './types';
+import { db } from './cf';
 
-// Menu data lives in data/menu.json, separate from the UI. Swap these two
-// functions for a database (e.g. Supabase) without touching any component.
-const FILE = path.join(process.cwd(), 'data', 'menu.json');
-
+// Menu lives in Cloudflare D1 (table kv, key 'menu'). data/menu.json is only the first-run seed.
 export async function getMenu(): Promise<Menu> {
-  return JSON.parse(await fs.readFile(FILE, 'utf8'));
+  const row = await (await db()).prepare("SELECT v FROM kv WHERE k = 'menu'").first<{ v: string }>();
+  return row ? JSON.parse(row.v) : (seed as unknown as Menu);
 }
 
 export function validateMenu(m: unknown): m is Menu {
@@ -18,5 +16,5 @@ export function validateMenu(m: unknown): m is Menu {
 }
 
 export async function saveMenu(m: Menu) {
-  await fs.writeFile(FILE, JSON.stringify(m, null, 2), 'utf8');
+  await (await db()).prepare("INSERT INTO kv (k, v) VALUES ('menu', ?) ON CONFLICT(k) DO UPDATE SET v = excluded.v").bind(JSON.stringify(m)).run();
 }

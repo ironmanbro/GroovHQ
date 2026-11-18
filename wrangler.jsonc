@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "groov-hq",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-06-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  // Created automatically on first deploy (wrangler auto-provisioning). Tables are created on first request.
+  "d1_databases": [{ "binding": "DB", "database_name": "groov-hq-db" }],
+  "r2_buckets": [{ "binding": "BUCKET", "bucket_name": "groov-hq-photos" }],
+  "observability": { "enabled": true }
+}
