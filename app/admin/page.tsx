@@ -5,6 +5,17 @@ import type { Item, Menu } from '@/lib/types';
 const inp = 'h-10 w-full rounded-lg border border-gun/70 bg-ink px-3 text-sm focus:border-silver focus:outline-none';
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || `x-${Date.now()}`;
 
+// Resize to max 1200px and re-encode as WebP in the browser so photos stay small (~100-200 KB).
+async function shrink(f: File): Promise<File> {
+  try {
+    const bmp = await createImageBitmap(f); const k = Math.min(1, 1200 / Math.max(bmp.width, bmp.height));
+    const c = document.createElement('canvas'); c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+    c.getContext('2d')!.drawImage(bmp, 0, 0, c.width, c.height);
+    const blob = await new Promise<Blob | null>(r => c.toBlob(r, 'image/webp', 0.82));
+    return blob ? new File([blob], 'photo.webp', { type: 'image/webp' }) : f;
+  } catch { return f; }
+}
+
 export default function Admin() {
   const [menu, setMenu] = useState<Menu | null>(null);
   const [msg, setMsg] = useState(''); const [dirty, setDirty] = useState(false); const [filter, setFilter] = useState('');
@@ -20,7 +31,7 @@ export default function Admin() {
     const j = await r.json(); setMsg(r.ok ? 'Saved. Live menu updated.' : j.error); if (r.ok) setDirty(false);
   }
   async function upload(id: string, f: File) {
-    const fd = new FormData(); fd.append('file', f); setMsg('Uploading…');
+    setMsg('Optimising photo…'); const small = await shrink(f); const fd = new FormData(); fd.append('file', small);
     const r = await fetch('/api/admin/upload', { method: 'POST', body: fd }); const j = await r.json();
     if (r.ok) { setItem(id, { image: j.url }); setMsg('Photo uploaded — remember to save.'); } else setMsg(j.error);
   }

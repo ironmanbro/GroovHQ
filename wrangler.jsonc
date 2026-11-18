@@ -5,8 +5,7 @@
   "compatibility_date": "2025-06-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
-  // D1 and R2 are auto-created on first deploy (no ids/names needed). Tables are created on first request.
+  // D1 is auto-created on first deploy (no ids/names needed). Tables are created on first request.
   "d1_databases": [{ "binding": "DB", "database_name": "groov-hq-db" }],
-  "r2_buckets": [{ "binding": "BUCKET" }],
   "observability": { "enabled": true }
 }
