@@ -1,0 +1,844 @@
+{
+  "settings": {
+    "cafeName": "GROOV HQ",
+    "logo": "/brand/logo.png",
+    "introVideo": "",
+    "currency": "₹",
+    "taxRate": 5,
+    "taxLabel": "GST",
+    "orderingEnabled": true,
+    "orderingDemo": false
+  },
+  "categories": [
+    {
+      "id": "signature",
+      "name": "Signature Specials"
+    },
+    {
+      "id": "coffee",
+      "name": "Coffee"
+    },
+    {
+      "id": "hot",
+      "name": "Hot Beverages"
+    },
+    {
+      "id": "cold",
+      "name": "Cold Beverages"
+    },
+    {
+      "id": "mocktails",
+      "name": "Mocktails"
+    },
+    {
+      "id": "shakes",
+      "name": "Shakes"
+    },
+    {
+      "id": "starters",
+      "name": "Starters"
+    },
+    {
+      "id": "burgers",
+      "name": "Burgers & Sandwiches"
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza"
+    },
+    {
+      "id": "mains",
+      "name": "Main Course"
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts"
+    },
+    {
+      "id": "combos",
+      "name": "Combos"
+    }
+  ],
+  "items": [
+    {
+      "id": "panther-black-latte",
+      "category": "signature",
+      "name": "Panther Latte",
+      "description": "Double ristretto, smoked vanilla and velvet micro-foam, poured with a rosetta.",
+      "price": 320,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
+      "bestseller": false,
+      "chefSpecial": true,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Milk",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Oat",
+              "price": 60
+            },
+            {
+              "label": "Almond",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "name": "Extras",
+          "type": "multi",
+          "options": [
+            {
+              "label": "Extra shot",
+              "price": 50
+            },
+            {
+              "label": "Vanilla syrup",
+              "price": 30
+            },
+            {
+              "label": "Hazelnut syrup",
+              "price": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chrome-truffle-fries",
+      "category": "signature",
+      "name": "Chrome Truffle Fries",
+      "description": "Hand-cut fries, white truffle oil, aged parmesan, cracked pepper.",
+      "price": 340,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877",
+      "bestseller": true,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": []
+    },
+    {
+      "id": "hq-smash-burger",
+      "category": "signature",
+      "name": "HQ Smash Burger",
+      "description": "Double smashed patty, cheddar, caramelised onion, house black-garlic aioli.",
+      "price": 490,
+      "veg": false,
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+      "bestseller": true,
+      "chefSpecial": true,
+      "spice": 1,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Add-ons",
+          "type": "multi",
+          "options": [
+            {
+              "label": "Extra cheese",
+              "price": 50
+            },
+            {
+              "label": "Fried egg",
+              "price": 40
+            },
+            {
+              "label": "Jalapeños",
+              "price": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "espresso",
+      "category": "coffee",
+      "name": "Espresso",
+      "description": "Single-origin, 18g dose, bright and syrupy.",
+      "price": 160,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Extras",
+          "type": "multi",
+          "options": [
+            {
+              "label": "Extra shot",
+              "price": 50
+            },
+            {
+              "label": "Vanilla syrup",
+              "price": 30
+            },
+            {
+              "label": "Hazelnut syrup",
+              "price": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cappuccino",
+      "category": "coffee",
+      "name": "Cappuccino",
+      "description": "Equal parts espresso, steamed milk and velvet foam.",
+      "price": 230,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1572442388796-11668a67e53d",
+      "bestseller": true,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Milk",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Oat",
+              "price": 60
+            },
+            {
+              "label": "Almond",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "name": "Extras",
+          "type": "multi",
+          "options": [
+            {
+              "label": "Extra shot",
+              "price": 50
+            },
+            {
+              "label": "Vanilla syrup",
+              "price": 30
+            },
+            {
+              "label": "Hazelnut syrup",
+              "price": 30
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Large",
+              "price": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flat-white",
+      "category": "coffee",
+      "name": "Flat White",
+      "description": "Ristretto shots under micro-foamed whole milk.",
+      "price": 250,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Milk",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Oat",
+              "price": 60
+            },
+            {
+              "label": "Almond",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "name": "Extras",
+          "type": "multi",
+          "options": [
+            {
+              "label": "Extra shot",
+              "price": 50
+            },
+            {
+              "label": "Vanilla syrup",
+              "price": 30
+            },
+            {
+              "label": "Hazelnut syrup",
+              "price": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "belgian-hot-chocolate",
+      "category": "hot",
+      "name": "Belgian Hot Chocolate",
+      "description": "70% dark chocolate melted into steamed milk.",
+      "price": 280,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Milk",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Oat",
+              "price": 60
+            },
+            {
+              "label": "Almond",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Large",
+              "price": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "smoked-masala-chai",
+      "category": "hot",
+      "name": "Smoked Masala Chai",
+      "description": "Assam leaf, hand-pounded spices, a whisper of smoke.",
+      "price": 180,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Milk",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Oat",
+              "price": 60
+            },
+            {
+              "label": "Almond",
+              "price": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nitro-cold-brew",
+      "category": "cold",
+      "name": "Nitro Cold Brew",
+      "description": "18-hour steep, nitrogen-charged, cascading and smooth.",
+      "price": 290,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735",
+      "bestseller": false,
+      "chefSpecial": true,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Size",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Large",
+              "price": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iced-spanish-latte",
+      "category": "cold",
+      "name": "Iced Spanish Latte",
+      "description": "Espresso over ice with condensed milk.",
+      "price": 280,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1517701604599-bb29b565090c",
+      "bestseller": true,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Milk",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Oat",
+              "price": 60
+            },
+            {
+              "label": "Almond",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Large",
+              "price": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "silver-mule",
+      "category": "mocktails",
+      "name": "Silver Mojito",
+      "description": "Fresh mint, lime, cane sugar, soda, crushed ice.",
+      "price": 260,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": []
+    },
+    {
+      "id": "midnight-berry-spritz",
+      "category": "mocktails",
+      "name": "Cucumber Lime Cooler",
+      "description": "Cucumber, lime, mint and sparkling tonic, poured tall.",
+      "price": 280,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": []
+    },
+    {
+      "id": "oreo-obsidian-shake",
+      "category": "shakes",
+      "name": "Oreo Obsidian Shake",
+      "description": "Cookies & cream, dark chocolate, whipped cream.",
+      "price": 310,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699",
+      "bestseller": true,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Size",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Large",
+              "price": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "salted-caramel-shake",
+      "category": "shakes",
+      "name": "Salted Caramel Shake",
+      "description": "Vanilla bean ice cream, burnt caramel, sea salt.",
+      "price": 300,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1577805947697-89e18249d767",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Size",
+          "type": "single",
+          "options": [
+            {
+              "label": "Regular",
+              "price": 0
+            },
+            {
+              "label": "Large",
+              "price": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hot-honey-wings",
+      "category": "starters",
+      "name": "Hot Honey Wings",
+      "description": "Crisp wings, chilli honey glaze, sesame, spring onion.",
+      "price": 420,
+      "veg": false,
+      "image": "https://images.unsplash.com/photo-1608039755401-742074f0548d",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 2,
+      "available": true,
+      "customisations": []
+    },
+    {
+      "id": "loaded-nachos",
+      "category": "starters",
+      "name": "Loaded Nachos",
+      "description": "Corn tortilla, cheese sauce, salsa, jalapeños, sour cream.",
+      "price": 360,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 1,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Add-ons",
+          "type": "multi",
+          "options": [
+            {
+              "label": "Extra cheese",
+              "price": 50
+            },
+            {
+              "label": "Fried egg",
+              "price": 40
+            },
+            {
+              "label": "Jalapeños",
+              "price": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crispy-paneer-burger",
+      "category": "burgers",
+      "name": "Smoked BBQ Burger",
+      "description": "Flame-grilled patty, smoked BBQ glaze, pickles, lettuce, brioche.",
+      "price": 380,
+      "veg": false,
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 1,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Add-ons",
+          "type": "multi",
+          "options": [
+            {
+              "label": "Extra cheese",
+              "price": 50
+            },
+            {
+              "label": "Fried egg",
+              "price": 40
+            },
+            {
+              "label": "Jalapeños",
+              "price": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "club-sandwich",
+      "category": "burgers",
+      "name": "Grilled Club Toastie",
+      "description": "Grilled chicken, egg, cheese and tomato, toasted golden.",
+      "price": 390,
+      "veg": false,
+      "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Add-ons",
+          "type": "multi",
+          "options": [
+            {
+              "label": "Extra cheese",
+              "price": 50
+            },
+            {
+              "label": "Fried egg",
+              "price": 40
+            },
+            {
+              "label": "Jalapeños",
+              "price": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "margherita",
+      "category": "pizza",
+      "name": "Margherita",
+      "description": "San Marzano tomato, fior di latte, fresh basil.",
+      "price": 450,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Crust",
+          "type": "single",
+          "options": [
+            {
+              "label": "Classic hand-tossed",
+              "price": 0
+            },
+            {
+              "label": "Thin & crisp",
+              "price": 0
+            },
+            {
+              "label": "Cheese burst",
+              "price": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pepperoni-inferno",
+      "category": "pizza",
+      "name": "Peri-Peri Chicken Pizza",
+      "description": "Peri-peri chicken, red onion, coriander, mozzarella, chilli drizzle.",
+      "price": 560,
+      "veg": false,
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
+      "bestseller": true,
+      "chefSpecial": false,
+      "spice": 2,
+      "available": true,
+      "customisations": [
+        {
+          "name": "Crust",
+          "type": "single",
+          "options": [
+            {
+              "label": "Classic hand-tossed",
+              "price": 0
+            },
+            {
+              "label": "Thin & crisp",
+              "price": 0
+            },
+            {
+              "label": "Cheese burst",
+              "price": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "penne-arrabbiata",
+      "category": "mains",
+      "name": "Penne Arrabbiata",
+      "description": "Bronze-cut penne, slow tomato, garlic, chilli flakes.",
+      "price": 420,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 1,
+      "available": true,
+      "customisations": []
+    },
+    {
+      "id": "wild-mushroom-risotto",
+      "category": "mains",
+      "name": "Wild Mushroom Risotto",
+      "description": "Arborio, porcini, parmesan, truffle butter.",
+      "price": 520,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1476124369491-e7addf5db371",
+      "bestseller": false,
+      "chefSpecial": true,
+      "spice": 0,
+      "available": true,
+      "customisations": []
+    },
+    {
+      "id": "herb-roast-chicken",
+      "category": "mains",
+      "name": "Grilled Herb Chicken",
+      "description": "Char-grilled chicken breast, herb butter, buttered vegetables.",
+      "price": 620,
+      "veg": false,
+      "image": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": false,
+      "customisations": []
+    },
+    {
+      "id": "molten-fudge-brownie",
+      "category": "desserts",
+      "name": "Molten Fudge Brownie",
+      "description": "Warm brownie, vanilla gelato, hot fudge.",
+      "price": 290,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c",
+      "bestseller": true,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": []
+    },
+    {
+      "id": "gelato-trio",
+      "category": "desserts",
+      "name": "Chocolate Sundae",
+      "description": "Vanilla gelato, chocolate sauce, brownie crumb, whipped cream.",
+      "price": 260,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": []
+    },
+    {
+      "id": "baked-cheesecake",
+      "category": "desserts",
+      "name": "Baked Cheesecake",
+      "description": "New York-style, berry compote.",
+      "price": 320,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": []
+    },
+    {
+      "id": "burger-fries-shake",
+      "category": "combos",
+      "name": "Burger + Fries + Shake",
+      "description": "HQ Smash Burger, classic fries, any shake.",
+      "price": 790,
+      "veg": false,
+      "image": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5",
+      "bestseller": true,
+      "chefSpecial": false,
+      "spice": 1,
+      "available": true,
+      "customisations": []
+    },
+    {
+      "id": "brunch-board",
+      "category": "combos",
+      "name": "Brunch Board",
+      "description": "Eggs your way, sourdough, avocado, cappuccino.",
+      "price": 650,
+      "veg": true,
+      "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8",
+      "bestseller": false,
+      "chefSpecial": false,
+      "spice": 0,
+      "available": true,
+      "customisations": []
+    }
+  ]
+}

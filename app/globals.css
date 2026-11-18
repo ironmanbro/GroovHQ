@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { background: #050505; -webkit-tap-highlight-color: transparent; }
+body { background: #050505; color: #F5F5F5; overflow-x: hidden; }
+::selection { background: #555B61; color: #fff; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* Brushed chrome text: restrained, cool-toned, no rainbow gloss. */
+.chrome-text {
+  background: linear-gradient(180deg, #FAFAFA 0%, #D9D9D9 38%, #7D848A 52%, #C9C9C9 70%, #EDEDED 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+/* 1px polished silver border via gradient mask */
+.chrome-border { position: relative; }
+.chrome-border::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(140deg, rgba(229,229,229,.55), rgba(85,91,97,.25) 35%, rgba(20,20,20,0) 55%, rgba(192,192,192,.35));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+.glass { background: rgba(14,14,14,.72); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); }
+.hairline { height: 1px; background: linear-gradient(90deg, transparent, rgba(192,192,192,.45), transparent); }
+.brushed {
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 1px, transparent 1px 3px),
+    linear-gradient(180deg, #1a1a1a, #101010);
+}
+/* consistent dark, moody treatment for mixed photography */
+.food-img { filter: saturate(.92) contrast(1.06) brightness(.94); }
+.photo-vignette { background: radial-gradient(120% 90% at 50% 30%, transparent 45%, rgba(5,5,5,.55) 80%, #050505 100%); }
+
+/* Light sweep across the logo, clipped to the logo's own pixels */
+.logo-sweep { position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.95) 50%, transparent 65%);
+  background-size: 250% 100%; background-position: 130% 0;
+  -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-position: center; mask-position: center; mix-blend-mode: screen; }
+.logo-sweep.run { animation: sweep 1.6s cubic-bezier(.6,0,.2,1) forwards; }
+@keyframes sweep { to { background-position: -30% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
