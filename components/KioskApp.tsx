@@ -56,11 +56,11 @@ export default function KioskApp({ menu }: { menu: Menu }) {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, scale: 1.04 }} transition={{ duration: 0.6, ease }}>
             <div className="absolute inset-0 opacity-70" style={{ background: 'url(/brand/prism.webp) center bottom/cover' }} />
             <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/20 to-ink" />
-            <motion.img src="/brand/intro-2.webp" alt="" aria-hidden className="absolute inset-y-0 right-0 h-full w-auto max-w-[70%] object-cover object-left"
-              style={{ filter: 'brightness(1.5) contrast(1.1)', maskImage: 'linear-gradient(90deg, transparent, #000 40%)', WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 40%)' }}
+            <motion.img src="/brand/branch.webp" alt="" aria-hidden className="absolute inset-y-0 right-0 h-full w-auto max-w-[70%] object-cover object-left"
+              style={{ maskImage: 'linear-gradient(90deg, transparent, #000 40%)', WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 40%)' }}
               animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }} />
             <Beam intensity={.7} />
-            <div className="relative flex h-full flex-col items-center justify-center px-8">
+            <div className="relative flex h-full flex-col items-center justify-center px-8 lg:pr-[32%]">
               <Logo src="/brand/logo.png" sweep className="h-16 sm:h-24" />
               <motion.span className="mt-14 flex items-center gap-3 text-sm uppercase tracking-[.5em] text-chrome" animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2.6, repeat: Infinity }}>
                 <Star className="h-4 w-4" /> Touch to order <Star className="h-4 w-4" />

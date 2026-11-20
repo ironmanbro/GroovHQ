@@ -5,7 +5,7 @@ import { motion, useAnimate, useInView, useMotionValue, useSpring } from 'framer
 /* The GROOV panther, big and present. Plays a mascot video when one is set (settings.mascotVideo: MP4/WebM of a black panther
    on a black background, blended in with `screen` so the black disappears). Without a video it falls back to the graded
    photo, brought to life: it breathes, leans toward the finger/cursor, and lunges when tapped. */
-export default function Mascot({ video, image = '/brand/intro-2.webp', reduced, className = '' }: { video?: string; image?: string; reduced: boolean; className?: string }) {
+export default function Mascot({ video, image = '/brand/hero.webp', reduced, className = '' }: { video?: string; image?: string; reduced: boolean; className?: string }) {
   const wrap = useRef<HTMLDivElement>(null); const vid = useRef<HTMLVideoElement>(null);
   const inView = useInView(wrap, { margin: '120px' });
   const x = useSpring(useMotionValue(0), { stiffness: 60, damping: 16 }); const y = useSpring(useMotionValue(0), { stiffness: 60, damping: 16 });
@@ -37,10 +37,10 @@ export default function Mascot({ video, image = '/brand/intro-2.webp', reduced, 
           <motion.div className="absolute inset-0" animate={inView && !reduced ? { scale: [1, 1.018, 1], y: [0, -3, 0] } : undefined} transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
             {video ? (
               <video ref={vid} src={video} poster={image} muted loop playsInline preload="metadata" aria-hidden
-                className="h-full w-full object-cover object-[60%_30%]" style={{ mixBlendMode: 'screen' }} />
+                className="h-full w-full object-cover object-[50%_30%]" style={{ mixBlendMode: 'screen' }} />
             ) : (
               /* eslint-disable-next-line @next/next/no-img-element */
-              <img src={image} alt="" aria-hidden className="h-full w-full object-cover object-[60%_25%]" style={{ filter: 'brightness(1.55) contrast(1.1)' }} />
+              <img src={image} alt="" aria-hidden className="h-full w-full object-cover object-[50%_30%]" style={{ filter: 'brightness(1.12) contrast(1.05)' }} />
             )}
           </motion.div>
           {/* a slow pass of cold light across the coat */}

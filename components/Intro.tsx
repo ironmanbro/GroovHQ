@@ -45,11 +45,11 @@ export default function Intro({ logo, video, reduced, onDone }: Props) {
             ) : (
               <>
                 {/* Scene 1: the leopard emerges from darkness, a key light sweeping across it */}
-                <motion.img src="/brand/intro-1.webp" alt="" className="absolute inset-0 h-full w-full object-cover object-center" style={{ filter: 'brightness(1.7) contrast(1.1)' }}
+                <motion.img src="/brand/intro-1.webp" alt="" className="absolute inset-0 h-full w-full object-cover object-center" style={{ filter: 'brightness(1.3)' }}
                   initial={{ opacity: 0, scale: 1.18 }} animate={{ opacity: [0, 1, 1, 0], scale: 1.04 }}
                   transition={{ duration: 2.6, times: [0, 0.35, 0.8, 1], ease: 'easeInOut' }} />
                 {/* Scene 2: it turns on the viewer */}
-                <motion.img src="/brand/intro-2.webp" alt="" className="absolute inset-0 h-full w-full object-cover object-[60%_30%]" style={{ filter: 'brightness(1.5) contrast(1.1)' }}
+                <motion.img src="/brand/intro-2.webp" alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
                   initial={{ opacity: 0, scale: 1.12, x: '4%' }} animate={{ opacity: [0, 1, 1], scale: 1.0, x: '0%' }}
                   transition={{ duration: 1.4, delay: 1.7, ease }} />
                 <motion.div aria-hidden className="absolute inset-0" style={{ background: 'radial-gradient(70% 55% at 50% 45%, transparent 20%, #050505 85%)' }} />
