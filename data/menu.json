@@ -2,7 +2,6 @@
   "settings": {
     "cafeName": "GROOV HQ",
     "logo": "/brand/logo.png",
-    "introVideo": "",
     "currency": "₹",
     "taxRate": 5,
     "taxLabel": "GST",

@@ -6,7 +6,7 @@ export type Item = {
 };
 export type Category = { id: string; name: string };
 export type Settings = {
-  cafeName: string; logo: string; introVideo?: string; mascotVideo?: string; currency: string; taxRate: number; taxLabel: string;
+  cafeName: string; logo: string; currency: string; taxRate: number; taxLabel: string;
   orderingEnabled: boolean; orderingDemo: boolean;
 };
 export type Menu = { settings: Settings; categories: Category[]; items: Item[] };

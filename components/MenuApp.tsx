@@ -6,7 +6,6 @@ import type { Item, Menu } from '@/lib/types';
 import Intro from './Intro';
 import Logo from './Logo';
 import Beam from './Beam';
-import Mascot from './Mascot';
 import PantherEyes, { Tip } from './PantherEyes';
 import ItemCard from './ItemCard';
 import { CartLine, CartSheet, ItemSheet } from './Sheets';
@@ -80,7 +79,7 @@ export default function MenuApp({ menu }: { menu: Menu }) {
   return (
     <>
       <AnimatePresence>
-        {intro === 'show' && <Intro key="intro" logo={settings.logo} video={settings.introVideo} reduced={reduced} onDone={finishIntro} />}
+        {intro === 'show' && <Intro key="intro" logo={settings.logo} reduced={reduced} onDone={finishIntro} />}
       </AnimatePresence>
       {intro === 'pending' && <div className="fixed inset-0 z-[100] bg-ink" />}
 
@@ -127,13 +126,15 @@ export default function MenuApp({ menu }: { menu: Menu }) {
       </header>
 
       <main id="top" className="mx-auto max-w-6xl px-4 pb-32">
-        <section className="chrome-border relative mt-6 overflow-hidden rounded-3xl bg-ink px-6 pb-10 pt-64 text-center sm:pt-80">
-          <Mascot video={settings.mascotVideo} reduced={reduced} />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-transparent" /><Beam intensity={.55} />
-          <div className="pointer-events-none relative">
-          <p className="text-[10px] uppercase tracking-[.5em] text-muted">The Menu</p>
-          <h1 className="chrome-text mt-3 font-display text-4xl leading-none sm:text-6xl">Crafted after dark.</h1>
-          <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-muted">Specialty coffee, kitchen plates and late-night indulgences. Tap any dish to explore.</p>
+        <section className="chrome-border relative mt-6 overflow-hidden rounded-3xl bg-ink px-6 py-14 text-center sm:py-20">
+          <div aria-hidden className="absolute inset-0 opacity-70" style={{ background: 'url(/brand/prism.webp) center bottom/cover' }} />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/45 to-ink/80" /><Beam intensity={.45} />
+          <div className="relative">
+            <h1 className="sr-only">GROOV HQ — menu</h1>
+            <Logo src={settings.logo} alt="" className="h-[calc(min(74vw,440px)/5.75)]" />
+            <div className="hairline mx-auto mt-8 w-32" />
+            <p className="chrome-text mt-6 font-display text-2xl leading-none sm:text-4xl">Crafted after dark.</p>
+            <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-muted">Specialty coffee, kitchen plates and late-night indulgences. Tap any dish to explore.</p>
           </div>
         </section>
 
