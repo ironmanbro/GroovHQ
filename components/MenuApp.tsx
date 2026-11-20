@@ -6,6 +6,7 @@ import type { Item, Menu } from '@/lib/types';
 import Intro from './Intro';
 import Logo from './Logo';
 import Beam from './Beam';
+import PantherEyes, { Tip } from './PantherEyes';
 import ItemCard from './ItemCard';
 import { CartLine, CartSheet, ItemSheet } from './Sheets';
 
@@ -28,6 +29,7 @@ export default function MenuApp({ menu }: { menu: Menu }) {
   const [cart, setCart] = useState<CartLine[]>([]);
   const [active, setActive] = useState(categories[0]?.id);
   const [table, setTable] = useState('');
+  const [pulse, setPulse] = useState(0);
   const navRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
 
@@ -66,9 +68,12 @@ export default function MenuApp({ menu }: { menu: Menu }) {
     const el = document.getElementById(`cat-${id}`); const h = document.querySelector('header')?.offsetHeight ?? 0;
     if (el) window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - h + 24, behavior: reduced ? 'auto' : 'smooth' });
   };
-  const add = (l: CartLine) => setCart(c => c.some(x => x.key === l.key) ? c.map(x => x.key === l.key ? { ...x, qty: Math.min(20, x.qty + l.qty) } : x) : [...c, l]);
+  const add = (l: CartLine) => { setPulse(p => p + 1); setCart(c => c.some(x => x.key === l.key) ? c.map(x => x.key === l.key ? { ...x, qty: Math.min(20, x.qty + l.qty) } : x) : [...c, l]); };
   const count = cart.reduce((s, l) => s + l.qty, 0);
   const total = cart.reduce((s, l) => s + l.unit * l.qty, 0);
+  const picks = items.filter(i => i.available && (i.bestseller || i.chefSpecial));
+  const tips: Tip[] = [...picks.map(i => ({ text: `${i.chefSpecial ? 'Chef’s special' : 'Bestseller'}: ${i.name} — ${settings.currency}${i.price}`, itemId: i.id })),
+    { text: 'Tap any dish for a closer look and options.' }, { text: 'Prefer vegetarian? Use the Veg filter up top.' }, { text: 'Hungry? Burgers & Pizza are a swipe away.' }];
   let n = 0;
 
   return (
@@ -161,6 +166,9 @@ export default function MenuApp({ menu }: { menu: Menu }) {
           <span className="font-display text-lg">{settings.currency}{total}</span>
         </button>
       )}
+
+      {intro === 'done' && <PantherEyes tips={tips} reduced={reduced} pulse={pulse} lift={settings.orderingEnabled && count > 0 && !cartOpen && !open}
+        onOpenItem={id => setOpen(items.find(i => i.id === id) ?? null)} />}
 
       <AnimatePresence>
         {open && <ItemSheet key="item" item={open} settings={settings} onClose={() => setOpen(null)} onAdd={add} />}
