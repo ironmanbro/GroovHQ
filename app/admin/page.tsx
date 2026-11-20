@@ -56,6 +56,7 @@ export default function Admin() {
         <h2 className="font-display text-lg sm:col-span-4">Settings</h2>
         <label className="text-xs text-muted">Logo URL<input className={inp} value={s.logo} onChange={e => upd({ ...menu, settings: { ...s, logo: e.target.value } })} /></label>
         <label className="text-xs text-muted">Intro video URL (optional)<input className={inp} value={s.introVideo ?? ''} onChange={e => upd({ ...menu, settings: { ...s, introVideo: e.target.value } })} /></label>
+        <label className="text-xs text-muted sm:col-span-2">Mascot video URL (panther on black, MP4/WebM, optional)<input className={inp} value={s.mascotVideo ?? ''} onChange={e => upd({ ...menu, settings: { ...s, mascotVideo: e.target.value } })} placeholder="/mascot/panther.mp4" /></label>
         <label className="text-xs text-muted">Tax %<input type="number" className={inp} value={s.taxRate} onChange={e => upd({ ...menu, settings: { ...s, taxRate: Number(e.target.value) } })} /></label>
         <div className="flex flex-col justify-end gap-1 text-xs text-muted">
           <label><input type="checkbox" checked={s.orderingEnabled} onChange={e => upd({ ...menu, settings: { ...s, orderingEnabled: e.target.checked } })} /> Ordering enabled</label>

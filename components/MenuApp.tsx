@@ -6,6 +6,7 @@ import type { Item, Menu } from '@/lib/types';
 import Intro from './Intro';
 import Logo from './Logo';
 import Beam from './Beam';
+import Mascot from './Mascot';
 import PantherEyes, { Tip } from './PantherEyes';
 import ItemCard from './ItemCard';
 import { CartLine, CartSheet, ItemSheet } from './Sheets';
@@ -126,11 +127,10 @@ export default function MenuApp({ menu }: { menu: Menu }) {
       </header>
 
       <main id="top" className="mx-auto max-w-6xl px-4 pb-32">
-        <section className="chrome-border relative mt-6 overflow-hidden rounded-3xl bg-ink px-6 pb-10 pt-48 text-center sm:pt-64">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/intro-2.webp" alt="" className="absolute inset-0 h-full w-full object-cover object-[60%_25%]" style={{ filter: 'brightness(1.6) contrast(1.1)' }} />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-transparent" /><Beam intensity={.55} />
-          <div className="relative">
+        <section className="chrome-border relative mt-6 overflow-hidden rounded-3xl bg-ink px-6 pb-10 pt-64 text-center sm:pt-80">
+          <Mascot video={settings.mascotVideo} reduced={reduced} />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-transparent" /><Beam intensity={.55} />
+          <div className="pointer-events-none relative">
           <p className="text-[10px] uppercase tracking-[.5em] text-muted">The Menu</p>
           <h1 className="chrome-text mt-3 font-display text-4xl leading-none sm:text-6xl">Crafted after dark.</h1>
           <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-muted">Specialty coffee, kitchen plates and late-night indulgences. Tap any dish to explore.</p>

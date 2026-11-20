@@ -32,3 +32,10 @@ Encode `https://YOUR-DOMAIN/?table=12` per table. Table number shows in the head
 - **Kitchen screen:** `/kitchen` (admin password). New orders appear within ~3s; enable sound once per device.
 - **Kiosk:** `/kiosk`. On iPad: open in Safari → Share → Add to Home Screen (full-screen), then lock with Settings → Accessibility → Guided Access. Resets after 60s idle.
 - **Payment:** collected by staff (table or counter). Orders are stored in D1 (kept 3 days). Razorpay can be added in `app/api/orders`.
+
+## Live panther mascot
+The menu banner shows the panther. Without a video it is the graded photo, animated (breathing, leans toward touch, lunges on tap). For a truly alive panther, add a short looping clip:
+1. Footage: a black panther on a **black/very dark background**, 4–8 s, seamless loop, no audio (licensed stock, or AI-generated from your reference photos).
+2. Shrink for phones (target under ~1.5 MB):
+   `ffmpeg -i in.mp4 -an -vf "scale=720:-2,fps=24" -c:v libx264 -crf 28 -preset slow -movflags +faststart public/mascot/panther.mp4`
+3. Admin → Settings → *Mascot video URL* → `/mascot/panther.mp4`. It is blended onto the black UI with `screen`, plays only while on screen, and is paused for reduced-motion users.
