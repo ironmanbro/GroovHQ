@@ -9,6 +9,8 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export default function Intro({ logo, video, reduced, onDone }: Props) {
   const [phase, setPhase] = useState<'panther' | 'logo' | 'ready'>(reduced ? 'ready' : 'panther');
   const [sound, setSound] = useState(false);
+  const [wide, setWide] = useState(false); // landscape screens: show the whole panther (images are black-edged) instead of cropping the face off
+  useEffect(() => setWide(matchMedia('(min-aspect-ratio: 1/1)').matches), []);
   const audio = useRef<AudioContext | null>(null);
 
   useEffect(() => {
@@ -45,14 +47,14 @@ export default function Intro({ logo, video, reduced, onDone }: Props) {
             ) : (
               <>
                 {/* Scene 1: the leopard emerges from darkness, a key light sweeping across it */}
-                <motion.img src="/brand/intro-1.webp" alt="" className="absolute inset-0 h-full w-full object-cover object-center" style={{ filter: 'brightness(1.3)' }}
-                  initial={{ opacity: 0, scale: 1.18 }} animate={{ opacity: [0, 1, 1, 0], scale: 1.04 }}
+                <motion.img src="/brand/intro-1.webp" alt="" className={`absolute inset-0 h-full w-full ${wide ? 'object-contain' : 'object-cover'} object-center`} style={{ filter: 'brightness(1.3)', transformOrigin: '38% 47%', ...(wide ? { WebkitMaskImage: 'radial-gradient(closest-side, #000 45%, transparent 98%)', maskImage: 'radial-gradient(closest-side, #000 45%, transparent 98%)' } : {}) }}
+                  initial={{ opacity: 0, scale: wide ? 1.0 : 1.55 }} animate={{ opacity: [0, 1, 1, 0], scale: wide ? 1.25 : 2.05 }}
                   transition={{ duration: 2.6, times: [0, 0.35, 0.8, 1], ease: 'easeInOut' }} />
                 {/* Scene 2: it turns on the viewer */}
-                <motion.img src="/brand/intro-2.webp" alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
-                  initial={{ opacity: 0, scale: 1.12, x: '4%' }} animate={{ opacity: [0, 1, 1], scale: 1.0, x: '0%' }}
-                  transition={{ duration: 1.4, delay: 1.7, ease }} />
-                <motion.div aria-hidden className="absolute inset-0" style={{ background: 'radial-gradient(70% 55% at 50% 45%, transparent 20%, #050505 85%)' }} />
+                <motion.img src="/brand/intro-2.webp" alt="" className={`absolute inset-0 h-full w-full ${wide ? 'object-contain object-center' : 'object-cover object-[50%_38%]'}`} style={{ transformOrigin: '48% 42%', ...(wide ? { WebkitMaskImage: 'radial-gradient(closest-side, #000 72%, transparent 100%)', maskImage: 'radial-gradient(closest-side, #000 72%, transparent 100%)' } : {}) }}
+                  initial={{ opacity: 0, scale: wide ? 1.0 : 1.3 }} animate={{ opacity: [0, 1, 1], scale: wide ? 1.18 : 1.6 }}
+                  transition={{ duration: 2.4, delay: 1.7, ease }} />
+                <motion.div aria-hidden className="absolute inset-0" style={{ background: 'radial-gradient(85% 70% at 50% 45%, transparent 35%, #050505 100%)' }} />
                 <motion.div aria-hidden className="absolute inset-0 mix-blend-screen"
                   style={{ background: 'linear-gradient(105deg, transparent 40%, rgba(229,229,229,.12) 50%, transparent 54%)', backgroundSize: '250% 100%' }}
                   initial={{ backgroundPosition: '140% 0' }} animate={{ backgroundPosition: '-40% 0' }} transition={{ duration: 2.6, delay: 0.2, ease }} />
